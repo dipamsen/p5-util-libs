@@ -1,3 +1,7 @@
+
+let ZOOM_MAX = 3
+let ZOOM_MIN = 1/3
+
 p5.prototype._initVals = function () {
   this.int_zoom = 1;
   this.int_offset = this.createVector(0, 0);
@@ -18,7 +22,7 @@ p5.prototype.interactive = function () {
 function mouseWheel1(event) {
   // convert delta value into zoom
   this.int_zoom *= 2 ** (-event.delta / 50);
-  this.int_zoom = constrain(this.int_zoom, 1 / 3, 3);
+  this.int_zoom = constrain(this.int_zoom, ZOOM_MIN, ZOOM_MAX);
   return false;
 }
 
