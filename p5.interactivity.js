@@ -8,6 +8,11 @@ p5.prototype._initVals = function () {
   this.mouseDragged = mouseDragged1.bind(this);
 };
 
+p5.prototype.setZoomLimits = function (min, max) {
+  this.ZOOM_LIM[0] = min;
+  this.ZOOM_LIM[1] = max;
+}
+
 p5.prototype.registerMethod("init", p5.prototype._initVals);
 
 p5.prototype.interactive = function () {
